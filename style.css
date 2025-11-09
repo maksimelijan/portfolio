@@ -1,0 +1,234 @@
+body {
+  font-family: "Segoe UI", sans-serif;
+  background-color: #f4f7fa;
+  margin: 0;
+  color: #333;
+}
+
+header {
+  background-color: #0077cc;
+  color: white;
+  text-align: center;
+  padding: 20px 0;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  margin: 0 15px;
+  font-weight: bold;
+}
+
+nav a.active {
+  text-decoration: underline;
+  color: #FFD700;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+main {
+  max-width: 800px;
+  margin: 40px auto;
+  background: white;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+footer {
+  text-align: center;
+  padding: 15px 0;
+  background-color: #0077cc;
+  color: white;
+  margin-top: 40px;
+}
+/* === Адаптивность для телефонов === */
+@media screen and (max-width: 600px) {
+  body {
+    font-size: 16px;
+    background-color: #f9fbfc;
+  }
+
+  header {
+    padding: 10px;
+  }
+
+  nav a {
+    display: block;        /* Каждая ссылка на новой строке */
+    margin: 8px 0;
+  }
+
+  main {
+    width: 90%;
+    padding: 15px;
+  }
+
+  footer {
+    font-size: 14px;
+    padding: 10px;
+  }
+  
+  img {
+	  max-width: 100%;
+	  height: auto;
+}
+
+}
+
+/* === Страница "Обо мне" === */
+
+.about-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.profile-photo {
+  width: 200px;
+  border-radius: 15%;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+}
+
+.about-text {
+  max-width: 400px;
+  text-align: left;
+}
+
+.about-text h2 {
+  color: #0077cc;
+}
+/* === Страница "Мои работы" === */
+
+.works-section {
+  text-align: center;
+}
+
+.works-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 25px;
+  margin-top: 20px;
+}
+
+.work-card {
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  width: 280px;
+  padding: 15px;
+  transition: transform 0.3s, box-shadow 0.3s
+  min-width: 250px;
+  flex: 1 1 280px;
+}
+
+.work-card a:hover {
+  color: #005fa3;
+  text-decoration: underline;
+}
+
+.work-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+.work-card img {
+  width: 100%;
+  border-radius: 8px;
+}
+
+.work-card h3 {
+  color: #0077cc;
+  margin: 10px 0 5px;
+}
+
+.work-card p {
+  font-size: 14px;
+  color: #555;
+}
+
+.work-card a {
+	color: #0077cc;
+	margin: 10px 0 5px;
+	text-decoration: none;
+	font-weight: bold;
+}
+
+/* === Страница "Контакты" === */
+.contact-section {
+  text-align: center;
+  max-width: 500px;
+  margin: 40px auto;
+  background: white;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+input, textarea {
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  resize: none;
+}
+
+button {
+  background-color: #0077cc;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 15px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #005fa3;
+}
+
+#responseMessage {
+  margin-top: 15px;
+  font-weight: bold;
+}
+
+.contact-num {
+	text-align: center;
+	margin-bottom: 50px;
+	text-align: center;
+	max-width: 500px;
+	margin: 40px auto;
+	background: white;
+	padding: 30px;
+	border-radius: 10px;
+	box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.contact-num a {
+	display: inline-block;
+    margin-top: 10px;
+    color: white;
+    background-color: #0077cc;
+    padding: 10px 15px;
+    border-radius: 8px;
+    text-decoration: none;
+	box-shadow: 0 0 10px rgba(0,0,0,0.1);
+	transition: background-color 0.3s;
+	font-size: 18px;
+	letter-spacing: 0.5px;
+}
+
+.contact-num a:hover {
+	background-color: #005fa3;
+}

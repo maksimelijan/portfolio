@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Игра "Угадай число"</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding-top: 80px;
+      background-color: #eef2f3;
+    }
+
+    input {
+      padding: 10px;
+      font-size: 16px;
+      width: 100px;
+    }
+
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      margin-left: 10px;
+      background-color: #0077cc;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #005fa3;
+    }
+
+    #result {
+      margin-top: 20px;
+      font-size: 18px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Угадай число от 1 до 100</h1>
+  <input type="number" id="userNumber" placeholder="Ваш ответ">
+  <button onclick="checkGuess()">Проверить</button>
+
+  <p id="result"></p>
+  <button id="restartButton" onclick="restartGame()" style="display: none;">Сыграть снова</button>
+  <p id="attemptsCount">Количество попыток: 0</p>
+
+
+  <script>
+    let secretNumber = Math.floor(Math.random() * 100) + 1;
+    let attempts = 0;
+
+    function checkGuess() {
+      const input = document.getElementById("userNumber");
+      const result = document.getElementById("result");
+	  const restartButton = document.getElementById("restartButton");
+	  const attemptsText = document.getElementById("attemptsCount");
+      const guess = Number(input.value);
+	  
+	  // Увеличиваем количество попыток
+	  attempts++;
+	  attemptsText.textContent = `Попыток: ${attempts}`;
+
+      if (guess === secretNumber) {
+        result.textContent = `🎉 Поздравляю! Ты угадал число ${secretNumber} за ${attempts} попыток!`;
+        result.style.color = "green";
+		document.body.style.backgroundColor = "#a3ffb3";
+		restartButton.style.display = "inline-block";
+      } else if (guess > secretNumber) {
+        result.textContent = "Меньше!⇩⇩";
+        result.style.color = "black";
+		document.body.style.backgroundColor = "#FF0000";
+      } else if (guess < secretNumber) {
+        result.textContent = "Больше!⇧⇧";
+        result.style.color = "black";
+		document.body.style.backgroundColor = "#0000CD";
+      }
+    }
+	function restartGame() {
+  // Генерируем новое число
+  secretNumber = Math.floor(Math.random() * 100) + 1;
+  attempts = 0;
+
+  // Сбрасываем текст и стили
+  document.getElementById("result").textContent = "";
+  document.getElementById("userNumber").value = "";
+  document.body.style.backgroundColor = "#eef2f3";
+  document.getElementById("attemptsCount").textContent = "Попыток: 0";
+
+  // Скрываем кнопку
+  document.getElementById("restartButton").style.display = "none";
+}
+  </script>
+</body>
+</html>

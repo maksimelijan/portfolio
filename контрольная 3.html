@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Контрольная 3</title>
+  <style>
+  body {
+      background-color: #00FF7F;
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding-top: 100px;
+    }
+	input {
+      padding: 10px;
+      font-size: 16px;
+      width: 200px;
+    }
+
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      margin-left: 10px;
+      background-color: #0077cc;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #005fa3;
+    }
+
+    #result {
+      margin-top: 20px;
+      font-size: 18px;
+    }
+   </style>
+</head>
+<body>
+<input type="text" id="nameInput" placeholder="Введите ваше имя">
+<button onclick="sayHello()">Отправить</button>
+
+<p id="greetingText" style="display: none;"></p>
+</body>
+<script>
+  function sayHello() {
+    const input = document.getElementById("nameInput");
+    const greeting = document.getElementById("greetingText");
+
+    const name = input.value.trim(); // .trim() убирает лишние пробелы
+
+    if (name !== "") {
+      greeting.textContent = `Спасибо, ${name}! Ваше сообщение отправлено.`;
+      greeting.style.display = "block";
+    } else {
+      greeting.textContent = "Введите ваше имя";
+      greeting.style.display = "block";
+    }
+  }
+</script>
+</html>
