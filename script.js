@@ -5,7 +5,7 @@
   let lastY = window.pageYOffset || document.documentElement.scrollTop || 0;
   let ticking = false;
 
-  header.style.transition = 'transform 0.25s ease, opacity 0.25s ease';
+  header.style.transition = 'transform 0.42s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.42s ease';
   header.style.willChange = 'transform, opacity';
 
   function getScrollY() {
