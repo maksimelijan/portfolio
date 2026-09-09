@@ -3,27 +3,55 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Портфолио — Максим</title>
+  <meta name="description" content="Личная визитка Максима — опыт, навыки, проекты и интересы.">
+  <title>Максим — личная визитка</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header>
-    <h1>Привет! Я — Максим</h1>
+<header class="site-header">
+  <div class="nav-wrap">
+    <a class="logo" href="index.html">Максим<span>.</span></a>
     <nav>
-      <a href="index.html" class="active">Главная</a>
+      <a class="active" href="index.html">Главная</a>
       <a href="about.html">Обо мне</a>
-      <a href="works.html">Мои работы</a>
+      <a href="works.html">Проекты</a>
+      <a href="resume.html">Резюме</a>
       <a href="contact.html">Контакты</a>
     </nav>
-  </header>
+  </div>
+</header>
 
-  <main>
-    <h2>Добро пожаловать на мой сайт-портфолио</h2>
-    <p>Здесь вы найдёте мои проекты, немного информации обо мне и способы связаться.</p>
-  </main>
+<main>
+  <section class="hero page-shell">
+    <div class="hero-copy">
+      <p class="eyebrow">PERSONAL WEBSITE · KOSTANAY, KAZAKHSTAN</p>
+      <h1>Привет, я <span>Максим</span>.</h1>
+      <p class="lead">Люблю разбираться в технике, создавать сайты и пробовать новое. Здесь собрал немного информации о себе, своём опыте, проектах и интересах.</p>
+      <div class="actions">
+        <a class="button" href="about.html">Узнать обо мне</a>
+        <a class="button button-ghost" href="works.html">Посмотреть проекты</a>
+      </div>
+    </div>
+    <div class="hero-card">
+      <div class="avatar">М</div>
+      <h2>Максим</h2>
+      <p>Начинающий веб-разработчик</p>
+      <div class="mini-stats"><span><b>HTML</b> & CSS</span><span><b>JS</b> основы</span><span><b>GitHub</b> проекты</span></div>
+    </div>
+  </section>
 
-  <footer>
-    <p>© 2025 maksimelijan. Все права защищены.</p>
-  </footer>
+  <section class="page-shell section">
+    <div class="section-head"><div><p class="eyebrow">КРАТКО</p><h2>Что здесь можно найти</h2></div></div>
+    <div class="cards three">
+      <article class="info-card"><div class="icon">01</div><h3>Обо мне</h3><p>Мой путь, образование, опыт и то, чем я интересуюсь сейчас.</p><a href="about.html">Подробнее →</a></article>
+      <article class="info-card"><div class="icon">02</div><h3>Проекты</h3><p>Учебные работы и эксперименты с HTML, CSS и JavaScript.</p><a href="works.html">Смотреть →</a></article>
+      <article class="info-card"><div class="icon">03</div><h3>Резюме</h3><p>Краткая версия опыта и навыков, которую удобно показать работодателю.</p><a href="resume.html">Открыть →</a></article>
+    </div>
+  </section>
+
+  <section class="page-shell quote section"><p>«Не обязательно знать всё сразу — главное, уметь разобраться.»</p></section>
+</main>
+
+<footer><div class="page-shell footer-inner"><span>© 2026 Максим</span><span>Сделано с HTML, CSS и JavaScript</span></div></footer>
 </body>
 </html>
