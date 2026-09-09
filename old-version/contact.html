@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Контакты — Максим</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Свяжитесь со мной</h1>
+    <nav>
+      <a href="index.html">Главная</a>
+      <a href="about.html">Обо мне</a>
+      <a href="works.html">Мои работы</a>
+      <a href="contact.html" class="active">Контакты</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="contact-section">
+      <h2>Напишите мне сообщение</h2>
+      <form id="contactForm">
+        <input type="text" id="name" placeholder="Ваше имя" required>
+        <input type="email" id="email" placeholder="Ваш email" required>
+        <textarea id="message" rows="5" placeholder="Ваше сообщение..." required></textarea>
+        <button type="submit">Отправить</button>
+      </form>
+
+      <p id="responseMessage"></p>
+    </section>
+	
+	<section class="contact-num">
+		<h2>Или свяжитесь со мной лично</h2>
+			<a href="https://t.me/maksimelijan">Мой ТГ</a>
+	</section>
+  </main>
+
+  <footer>
+    <p>© 2025 maksimelijan. Все права защищены.</p>
+  </footer>
+
+  <script>
+    const form = document.getElementById("contactForm");
+    const response = document.getElementById("responseMessage");
+
+    form.addEventListener("submit", function(event) {
+      event.preventDefault(); // предотвращает перезагрузку страницы
+
+      const name = document.getElementById("name").value.trim();
+      const email = document.getElementById("email").value.trim();
+      const message = document.getElementById("message").value.trim();
+
+      if (name && email && message) {
+        response.textContent = `Спасибо, ${name}! Ваше сообщение отправлено.`;
+        response.style.color = "green";
+        form.reset(); // очищает поля формы
+      } else {
+        response.textContent = "Пожалуйста, заполните все поля.";
+        response.style.color = "red";
+      }
+    });
+  </script>
+</body>
+</html>
