@@ -5,7 +5,8 @@
   let lastY = window.pageYOffset || document.documentElement.scrollTop || 0;
   let ticking = false;
 
-  header.style.transition = 'transform 0.42s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.42s ease';
+  // Более медленная и мягкая анимация без резкого исчезновения.
+  header.style.transition = 'transform 0.65s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.65s ease';
   header.style.willChange = 'transform, opacity';
 
   function getScrollY() {
@@ -17,15 +18,15 @@
     const delta = y - lastY;
 
     if (y <= 5) {
-      header.style.transform = 'translateY(0)';
+      header.style.transform = 'translate3d(0, 0, 0)';
       header.style.opacity = '1';
       header.style.pointerEvents = 'auto';
     } else if (delta > 2) {
-      header.style.transform = 'translateY(-110%)';
+      header.style.transform = 'translate3d(0, -110%, 0)';
       header.style.opacity = '0';
       header.style.pointerEvents = 'none';
     } else if (delta < -2) {
-      header.style.transform = 'translateY(0)';
+      header.style.transform = 'translate3d(0, 0, 0)';
       header.style.opacity = '1';
       header.style.pointerEvents = 'auto';
     }
